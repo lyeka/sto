@@ -5,7 +5,6 @@ type CQueue struct {
 	s2 *Stack
 }
 
-
 func Constructor() CQueue {
 	return CQueue{s1: &Stack{}, s2: &Stack{}}
 }
@@ -31,10 +30,9 @@ func (s *Stack) len() int {
 	return len(s.d)
 }
 
-func (this *CQueue) AppendTail(value int)  {
+func (this *CQueue) AppendTail(value int) {
 	this.s1.Add(value)
 }
-
 
 func (this *CQueue) DeleteHead() int {
 	if this.s1.len() == 0 && this.s2.len() == 0 {
@@ -49,4 +47,3 @@ func (this *CQueue) DeleteHead() int {
 	}
 	return this.s2.Pop()
 }
-
