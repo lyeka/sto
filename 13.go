@@ -12,10 +12,10 @@ func movingCount(m int, n int, k int) int {
 	for len(l) > 0 {
 		p := l[0]
 		l = l[1:]
-		if  pointMap[p] != 1 && p.x < m && p.y < n && (getSum(p.x) + getSum(p.y)) <= k {
+		if pointMap[p] != 1 && p.x < m && p.y < n && (getSum(p.x)+getSum(p.y)) <= k {
 			pointMap[p] = 1
-			l = append(l, Point{p.x+1, p.y})
-			l = append(l, Point{p.x, p.y+1})
+			l = append(l, Point{p.x + 1, p.y})
+			l = append(l, Point{p.x, p.y + 1})
 		}
 	}
 	return len(pointMap)
